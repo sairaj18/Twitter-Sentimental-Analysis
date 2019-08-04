@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/37f002aa-032d-480b-9aa7-474adef47ed6/daqohse-f79cb156-0096-4748-9f7e-39b15cf2e86e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM3ZjAwMmFhLTAzMmQtNDgwYi05YWE3LTQ3NGFkZWY0N2VkNlwvZGFxb2hzZS1mNzljYjE1Ni0wMDk2LTQ3NDgtOWY3ZS0zOWIxNWNmMmU4NmUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.J-x32M2EVAjG7wBPe_hvxGgyKH1dUGhBaoYqYjhUXW4'); 
+      background-size: cover;
+		}
+		* {
+  			box-sizing: border-box;
+			}
+
+.button {
+    display: block;
+    width: 400px;
+    height: 250px;
+    background: #4E9CAF;
+    padding: 80px;
+    top:200px;
+    left: 600px;
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/37f002aa-032d-480b-9aa7-474adef47ed6/daqohse-f79cb156-0096-4748-9f7e-39b15cf2e86e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM3ZjAwMmFhLTAzMmQtNDgwYi05YWE3LTQ3NGFkZWY0N2VkNlwvZGFxb2hzZS1mNzljYjE1Ni0wMDk2LTQ3NDgtOWY3ZS0zOWIxNWNmMmU4NmUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.J-x32M2EVAjG7wBPe_hvxGgyKH1dUGhBaoYqYjhUXW4'); background-size: cover;
+}
+.button1 {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background: #4E9CAF;
+    padding: 80px;
+    top:100px;
+    left:100px;
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background:black;
+}
+	</style>
+</head>
+<body>
+	<div class="results">	
+	
+	</div>
+	<div class="container">
+  		<form>
+        <div class="con" style="color:blue;font-size:50px;position:absolute;left:700px;top:100px;font-family:'Times New Roman';">Prediction</div>
+  		  <a class="button"><font size="5" style="color:white;">Most tweets on the keyword you enterd are {{prediction}}</font></a>
+        <a class="button1">
+          <a><font size="5" style="color:white;top:140px;left:100px;position: absolute;">Pages</font></a>
+  <a href="{{url_for('index')}}"><font size="5" style="color:white;top:180px;left:100px;position: absolute;">1.Starting page</font></a>
+  <a href="{{url_for('home')}}"><font size="5" style="color:white;top:210px;left:100px;position: absolute;">2.Home</font></a>
+  <a href="{{url_for('prediction')}}"><font size="5" style="color:white;top:240px;left:100px;position: absolute;">3.Resultt</font></a>
+  <a  href="about.html"><font size="5" style="color:white;top:270px;left:100px;position: absolute;">4.About</font></a>
+</a>
+  		</form>
+	</div>
+</body>
+</html>
