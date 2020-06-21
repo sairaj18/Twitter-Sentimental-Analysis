@@ -1,62 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<style type="text/css">
-		body{
-			background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/37f002aa-032d-480b-9aa7-474adef47ed6/daqohse-f79cb156-0096-4748-9f7e-39b15cf2e86e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM3ZjAwMmFhLTAzMmQtNDgwYi05YWE3LTQ3NGFkZWY0N2VkNlwvZGFxb2hzZS1mNzljYjE1Ni0wMDk2LTQ3NDgtOWY3ZS0zOWIxNWNmMmU4NmUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.J-x32M2EVAjG7wBPe_hvxGgyKH1dUGhBaoYqYjhUXW4'); 
-      background-size: cover;
-		}
-		* {
-  			box-sizing: border-box;
-			}
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+  </head>
+  <body data-spy="scroll" date-target=".navbar" data-offset="50">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">TSA</a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-.button {
-    display: block;
-    width: 400px;
-    height: 250px;
-    background: #4E9CAF;
-    padding: 80px;
-    top:200px;
-    left: 600px;
-    position: absolute;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/37f002aa-032d-480b-9aa7-474adef47ed6/daqohse-f79cb156-0096-4748-9f7e-39b15cf2e86e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM3ZjAwMmFhLTAzMmQtNDgwYi05YWE3LTQ3NGFkZWY0N2VkNlwvZGFxb2hzZS1mNzljYjE1Ni0wMDk2LTQ3NDgtOWY3ZS0zOWIxNWNmMmU4NmUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.J-x32M2EVAjG7wBPe_hvxGgyKH1dUGhBaoYqYjhUXW4'); background-size: cover;
-}
-.button1 {
-    display: block;
-    width: 300px;
-    height: 300px;
-    background: #4E9CAF;
-    padding: 80px;
-    top:100px;
-    left:100px;
-    position: absolute;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    background:black;
-}
-	</style>
-</head>
-<body>
-	<div class="results">	
-	
-	</div>
-	<div class="container">
-  		<form>
-        <div class="con" style="color:blue;font-size:50px;position:absolute;left:700px;top:100px;font-family:'Times New Roman';">Prediction</div>
-  		  <a class="button"><font size="5" style="color:white;">Most tweets on the keyword you enterd are {{prediction}}</font></a>
-        <a class="button1">
-          <a><font size="5" style="color:white;top:140px;left:100px;position: absolute;">Pages</font></a>
-  <a href="{{url_for('index')}}"><font size="5" style="color:white;top:180px;left:100px;position: absolute;">1.Starting page</font></a>
-  <a href="{{url_for('home')}}"><font size="5" style="color:white;top:210px;left:100px;position: absolute;">2.Home</font></a>
-  <a href="{{url_for('prediction')}}"><font size="5" style="color:white;top:240px;left:100px;position: absolute;">3.Resultt</font></a>
-  <a  href="about.html"><font size="5" style="color:white;top:270px;left:100px;position: absolute;">4.About</font></a>
-</a>
-  		</form>
-	</div>
-</body>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('home') }}">HOME<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">EXPLORE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="jumbotron jumbotron-fluid height100p banner" id="home">
+      <div class="container h100">
+        <div class="contentBox h100">
+          <div>
+            <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">Output</h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">Most tweets on the keyword you enterd are {{prediction}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="sci">
+              <li>
+                <a href="#">
+                  <i class="fa fa-facebook"></i><!--use fontawesome icon -->
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-twitter"></i><!--use fontawesome icon -->
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-google-plus"></i><!--use fontawesome icon -->
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-linkedin"></i><!--use fontawesome icon -->
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-instagram"></i><!--use fontawesome icon -->
+                </a>
+              </li>
+            </ul>
+            <p class="cpryt">© Copyright 2020 AMFR | Template by <a href="#">sairaj</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script type="text/javascript">
+      $(document).scroll(function(){
+        $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
+      });
+    </script>
+  </body>
 </html>
